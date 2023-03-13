@@ -1,0 +1,41 @@
+.container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+
+  & > * {
+    padding: 1rem;
+    background: green;
+  }
+
+  .navbar {
+    grid-area: 1 / 1 / 2 / 4; /* Place the navbar in the first row, spanning all three columns */
+    background: red;
+    //apply flex
+    display: flex;
+    justify-content: space-between; /* Align items on either side of the navbar */
+  }
+
+  .content {
+    grid-area: 2 / 2 / 3 / 4; /* Place the content in the second row, second column */
+    //apply flex
+    background: blue;
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to a new line if they don't fit */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  .sidebar {
+    grid-area: 2 / 1 / 3 / 2; /* Place the sidebar in the second row, first column */
+    //apply flex
+    display: flex;
+    flex-direction: column; /* Stack items vertically within the sidebar */
+  }
+
+  .footer {
+    background: teal;
+    grid-area: 3 / 1 / 4 / 4; /* Place the footer in the third row, spanning all three columns */
+  }
+}
